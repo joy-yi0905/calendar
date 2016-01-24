@@ -13,3 +13,7 @@ calendar
 - 3.点击日期，可新建日程。本地存储，同一浏览器关闭无影响。
 
 - 4.清除按钮，可清除全部日程。
+
+calendar演示：[点击查看](http://joy-yi0905.github.io/calendar/)
+
+![扫描二维码](http://joy-yi0905.github.io/calendar/images/qr.png) 
