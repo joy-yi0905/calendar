@@ -1,0 +1,113 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="wap-font-scale" content="no"/>
+<title>calendar</title>
+<style type="text/css">
+body,ul,h2,h3,p{margin:0;padding:0}
+body{width:100%;font:bold 14px/30px "microsoft yahei";}
+li{list-style:none;}
+.clearfix{zoom:1;}
+.clearfix:after{content:'';display:block;height:0;clear:both;}
+.calendar{position:relative;width:100%;margin:10px auto;text-align:center;-moz-user-select:none}
+.calendar-hd{line-height:30px;}
+.calendar-hd span{margin:0 5px;}
+.calendar-hd .view-month{color:#F36E5D;}
+.calendar-hd .user-action{font:bold 18px/30px "simsun";text-decoration:none;color:#333;}
+.calendar-hd .prev-month,.calendar-hd .prev-year{float:left;}
+.calendar-hd .next-month,.calendar-hd .next-year{float:right;}
+.calendar-hd .prev-month{margin-left:20px;color:#F36E5D;}
+.calendar-hd .next-month{margin-right:20px;color:#F36E5D;}
+.calendar-hd .prev-year{margin-left:18px;}
+.calendar-hd .next-year{margin-right:18px;}
+.calendar-day{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:10px 0;}
+.calendar-date{position: relative;zoom:1;height:300px;overflow:hidden;}
+.calendar-date ul{position: absolute;left:0;top:0;width:100%;height:300px;}
+.calendar-day li,.calendar-date li{position:relative;float:left;width:14.285%;height:50px;overflow:hidden;}
+.calendar-day li{height:30px;}
+.calendar-date .single-date{position: absolute;top:0;left:0;width:100%;height:100%;color:#333;text-decoration:none;}
+.calendar-date .gray-date{color:#bbb;}
+.calendar-date .now-date{background:#f0f0f0;}
+.calendar-date .now-date span{color:#F36E5D;}
+.calendar-date .hover-date{background:#f0f0f0;}
+.calendar-date .solar{line-height:40px;}
+.calendar-date .lunar{position:absolute;left:0;bottom:-2px;width:100%;color:#ccc;font-size:12px;font-weight:normal;text-align:center;}
+.calendar-date .festival-date .lunar{color:#F36E5D;font-weight:bold;}
+.calendar-date .single-date .schedule{position:absolute;top:0;right:0;display:none;border:6px solid #fff;border-right:6px solid #F36E5D;border-top:6px solid #F36E5D;}
+.calendar-date .schedule-date .schedule{display:block;}
+.calendar-date .hover-date .schedule,.calendar-date .now-date .schedule{border:6px solid #f0f0f0;border-right:6px solid #F36E5D;border-top:6px solid #F36E5D;}
+
+.date-layer{position:absolute;left:0;top:10px;display:none;width:100%;height:100%;background:#fff;}
+.content-box{width:80%;margin:0 auto;padding:5px 10px 10px;border:2px solid #ccc;}
+.content-box .content-box-tit{font:bold 12px/26px "microsoft yahei";text-align: center;}
+.content-box .date-content{margin:10px 0;line-height:22px;min-height:42px;_height:42px;font-weight:normal;text-align:left;background: #fff;}
+.content-box .content-action{text-align:center;}
+.content-action button{width:100px;height:30px;}
+.clear{padding:3px 10px;}
+
+.fun-intro{/*position: absolute;left:10px;bottom:10px;*/line-height:26px;font-size:12px;}
+.fun-intro .intro-tit{font:20px/28px "宋体";}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="calendar" onselectstart="return false;">
+    <div class="calendar-hd">
+        <a class="user-action prev-year" href="javascript:;"><</a>
+        <a class="user-action next-year" href="javascript:;">></a>
+        <a class="user-action prev-month" href="javascript:;"><</a>
+        <a class="user-action next-month" href="javascript:;">></a>
+        <span class="view-year"></span>年<span class="view-month"></span>月
+        <input type="hidden" value="" class="go-year"/>
+        <input type="hidden" value="" class="go-month"/>
+    </div>
+    <div class="calendar-bd">
+        <div class="calendar-day">
+            <ul class="clearfix">
+                <li>一</li>
+                <li>二</li>
+                <li>三</li>
+                <li>四</li>
+                <li>五</li>
+                <li>六</li>
+                <li>日</li>
+            </ul>
+        </div>
+        <div class="calendar-date">
+            <ul class="clearfix"></ul>
+        </div>
+    </div>
+</div>
+
+<div class="date-layer">
+    <div class="content-box">
+        <div class="content-box-hd">
+            <h2 class="content-box-tit">这是一个手小请客</h2>
+        </div>
+    
+        <div class="content-box-bd">
+            <div class="date-content" data-list="" contenteditable="true" >
+                当前日期还未创建日程安排，点击创建！
+            </div>
+            <div class="content-action">
+                <button class="content-save">保存</button>
+                <button class="content-cancel">取消</button>
+            </div>
+        </div> 
+    </div>
+</div>
+
+<input type="button" value="清空所有日程安排" onclick="" class="clear-schedule"/>
+
+<script src="js/jquery-1.8.0.min.js"></script>
+<script src="js/calendar.js"></script>
+</body>
+</html>
+
+
